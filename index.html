@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PassGen</title>
+        <link rel="icon" type="image/x-icon" href="favicon.png">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>PassGen</h1>
+                    <p id="password-output">your new password goes here</p>
+                    <form id="options">
+                        <label for="length">Length</label>
+                        <label for="length" id="length-value">8</label>
+                        <input type="range" id="length" min="8" max="32" value="8">
+
+                        <label><input id="upper" type="checkbox" checked>Uppercase</label>
+                        <label><input id="lower" type="checkbox" checked>Lowercase</label>
+                        <label><input id="numbers" type="checkbox" checked="true">Numbers</label>
+                        <label><input id="symbols" type="checkbox" checked="true">Symbols</label>
+                    </form>
+
+                    <button class="btn btn-default" onclick="generate_password()">Generate</button>
+                </div>
+            </div>
+        </div>
+        <script>
+
+            document.getElementById("length").addEventListener("click", function(event) {
+                event.preventDefault()
+                console.log(password_length)
+                password_length = document.getElementById("length").value;
+                document.getElementById("length-value").innerHTML = password_length;
+                console.log(password_length)
+                
+            })
+
+            document.getElementById("upper").addEventListener("click", function(event) {
+                event.preventDefault()
+                if (upper == true) {
+                    upper = false;
+                } else {
+                    upper = true;
+                }
+            })
+
+            document.getElementById("lower").addEventListener("click", function(event) {
+                event.preventDefault()
+                if (lower == true) {
+                    lower = false;
+                } else {
+                    lower = true;
+                }
+            })
+
+            document.getElementById("numbers").addEventListener("click", function(event) {
+                event.preventDefault()
+                if (numbers == true) {
+                    numbers = false;
+                    document.getElementById("numbers").checked = false;
+                } else {
+                    numbers = true;
+                    document.getElementById("numbers").checked = true;
+                }
+            })
+
+            document.getElementById("symbols").addEventListener("click", function(event) {
+                event.preventDefault()
+                if (symbols == true) {
+                    symbols = false;
+                } else {
+                    symbols = true;
+                }
+            })
+
+            
+        </script>
+   </body>
+</html>
