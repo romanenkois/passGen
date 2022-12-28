@@ -6,7 +6,7 @@
 }
 
 * {
-    outline: solid 1px red;
+    /*outline: solid 1px red;*/
     font-size: medium;
     user-select: none;
 }
