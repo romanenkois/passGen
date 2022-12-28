@@ -1,0 +1,62 @@
+:root {
+    --dark: #212529;
+    --darker: #0e0f11;
+    --light: #ececec;
+    --primary: #00ffea;
+}
+
+* {
+    outline: solid 1px red;
+    font-size: medium;
+    user-select: none;
+}
+
+body {
+    background-color: var(--dark);
+    padding: 0;
+    margin: 0;
+    color: var(--light);
+}
+
+#window {
+    background-color: var(--darker);
+    padding: 40px;
+}
+
+form div {
+    padding: 10px
+}
+
+h1 {
+    color: var(--light);
+    font-size: 5em;
+    font-weight: bold;
+}
+
+#password-output {
+    background-color: var(--dark);
+    color: var(--primary);
+    font-style: italic;
+    opacity: 0.8;
+    padding: 10px;
+    border-radius: 5px;
+    user-select: text!important;
+}
+
+input {
+    accent-color: var(--primary);
+}
+
+#gnrt-btn {
+    background-color: var(--dark);
+    color: var(--primary);
+    border: none;
+    margin: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
