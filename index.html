@@ -6,8 +6,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <link rel="stylesheet" href="style.css">
         <script src="script.js"></script>
@@ -22,13 +20,13 @@
                         <form id="options" class="row">
                             <div class="col-12">
                             <label for="length">Length</label>
-                            <label for="length" id="length-value">8</label>
-                            <input type="range" id="length" min="8" max="32" value="8"></div>
+                            <label for="length" id="length-value"></label>
+                            <input type="range" name="length" id="length" min="8" max="32" value="8"></div>
 
-                            <div class="col-12"><label><input id="upper" type="checkbox" checked="true">Uppercase</label></div>
-                            <div class="col-12"><label><input id="lower" type="checkbox" checked="true">Lowercase</label></div>
-                            <div class="col-12"><label><input id="numbers" type="checkbox" checked="true">Numbers</label></div>
-                            <div class="col-12"><label><input id="symbols" type="checkbox" checked="true">Symbols</label></div>
+                            <div class="col-12"><label><input name="upper" id="upper" type="checkbox">Uppercase</label></div>
+                            <div class="col-12"><label><input name="lower" id="lower" type="checkbox">Lowercase</label></div>
+                            <div class="col-12"><label><input name="numbers" id="numbers" type="checkbox">Numbers</label></div>
+                            <div class="col-12"><label><input name="symbols" id="symbols" type="checkbox">Symbols</label></div>
                         </form>
                     </div>
 
@@ -38,6 +36,18 @@
         </div>
 
         <script>
+            password_length = document.getElementById("length").value;
+            document.getElementById("length-value").innerHTML = password_length;
+
+
+            let formData = {};
+            const form = document.querySelector('form');
+            const LS = localStorage;
+
+            form.addEventListener("input", function(event){
+                formData[event.target.name] = event.target.value;
+                LS.setItem('formDataLS', JSON.stringify(formData));
+            });
 
             document.getElementById("length").addEventListener("input", function(event) {
                 event.preventDefault()
