@@ -39,7 +39,7 @@
 
         <script>
 
-            document.getElementById("length").addEventListener("click", function(event) {
+            document.getElementById("length").addEventListener("input", function(event) {
                 event.preventDefault()
                 console.log(password_length)
                 password_length = document.getElementById("length").value;
@@ -48,7 +48,7 @@
                 
             })
 
-            document.getElementById("upper").addEventListener("click", function(event) {
+            document.getElementById("upper").addEventListener("input", function(event) {
                 event.preventDefault()
                 if (upper == true) {
                     upper = false;
@@ -57,7 +57,7 @@
                 }
             })
 
-            document.getElementById("lower").addEventListener("click", function(event) {
+            document.getElementById("lower").addEventListener("input", function(event) {
                 event.preventDefault()
                 if (lower == true) {
                     lower = false;
@@ -68,7 +68,7 @@
                 }
             })
 
-            document.getElementById("numbers").addEventListener("click", function(event) {
+            document.getElementById("numbers").addEventListener("input", function(event) {
                 event.preventDefault()
                 if (numbers == true) {
                     numbers = false;
@@ -79,7 +79,7 @@
                 }
             })
 
-            document.getElementById("symbols").addEventListener("click", function(event) {
+            document.getElementById("symbols").addEventListener("input", function(event) {
                 event.preventDefault()
                 if (symbols == true) {
                     symbols = false;
