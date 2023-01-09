@@ -1,8 +1,8 @@
 var password_length = 8;
-var upper = true;
-var lower = true;
-var numbers = true;
-var symbols = true;
+var upper = false;
+var lower = false;
+var numbers = false;
+var symbols = false;
 
 function generate_password() {
     var password = "";
